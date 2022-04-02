@@ -3,7 +3,7 @@ import styles from "./chat.module.css";
 import { TextField } from "@mui/material";
 import send from "./send.png";
 function Chat(props) {
-  console.log(props.messages.length);
+  //console.log(props.messages.length);
   const [timeShow, setTimeShow] = useState([]);
   useEffect(() => {
     for (let i = 0; i < props.messages.length; i++) {
@@ -18,7 +18,7 @@ function Chat(props) {
     times[index] = true;
     setHover(true);
     setTimeShow([...times]);
-    console.log(index);
+    //console.log(index);
   };
 
   const onLeave = (index) => {
@@ -27,7 +27,7 @@ function Chat(props) {
     times[index] = false;
     setHover(true);
     setTimeShow([...times]);
-    console.log(index);
+    //console.log(index);
   };
 
   const scrollToBottom = () => {
