@@ -20,8 +20,9 @@ db.once("open", async function () {
 });
 
 //server start
-const server = app.listen(8080, () => {
-  console.log("server started port 8080");
+const port = process.env.PORT || 8080;
+const server = app.listen(port, () => {
+  console.log(`server started port ${port}`);
 });
 
 //Unhandled Rejection Error handling
