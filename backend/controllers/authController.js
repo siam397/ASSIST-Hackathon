@@ -122,7 +122,7 @@ const generateToken = (user) => {
 
 //Verification of a professional
 exports.verification = catchAsync(async (req, res, next) => {
-  console.log(req.user);
+  //console.log(req.user);
   if (req.user === "undefined") {
     return next(new AppError("sign up unsuccessful", 404));
   }

@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const compression = require("compression");
 const userRouter = require("./routes/userRoutes");
 const approvalRouter = require("./routes/approvalRoutes");
 const appointmentRouter = require("./routes/appointmentRoutes");
@@ -25,6 +26,7 @@ app.use(
     credentials: true,
   })
 );
+app.use(compression());
 
 //REST Architecture
 app.use("/api/users", userRouter);

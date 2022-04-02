@@ -7,7 +7,7 @@ const catchAsync = require("../utils/catchAsync");
 
 //Get all blogs
 exports.getAllBlogs = catchAsync(async (req, res, next) => {
-  console.log(req.user);
+  //console.log(req.user);
   const blogs = await BlogPost.find();
 
   //data aggregation for consumer's blogs
@@ -39,7 +39,7 @@ exports.uploadUserPhoto = multermiddlewares.multerFunc("blogs").single("photo");
 
 //Create a new blog
 exports.createBlog = catchAsync(async (req, res, next) => {
-  console.log(req.file, req.body);
+  //console.log(req.file, req.body);
   const { title, body, category } = req.body;
   const blog = await ApproveBlog.create({
     title,

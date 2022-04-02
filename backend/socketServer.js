@@ -9,7 +9,7 @@ var users = {};
 
 var messages = {};
 
-var groupChat={}
+var groupChat = {};
 
 io.on("connection", (socket) => {
   socket.on("join-groupChat", (room, cb) => {
@@ -22,7 +22,7 @@ io.on("connection", (socket) => {
     }
   });
   socket.on("sendGroup", (sentMessage) => {
-    console.log(sentMessage);
+    // console.log(sentMessage);
     const room = sentMessage.room;
     if (groupChat[room]) {
       groupChat[room].push(sentMessage);
@@ -73,7 +73,7 @@ io.on("connection", (socket) => {
         ...users[sentMessage.receiverId],
       ];
     }
-    console.log(users);
+    //console.log(users);
     io.sockets.emit("getChatList", users);
   });
 

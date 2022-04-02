@@ -62,7 +62,7 @@ exports.uploadUserPhoto = multermiddlewares
   .multerFunc("professionals")
   .single("photo");
 exports.updateMe = catchAsync(async (req, res, next) => {
-  console.log(req.user);
+  //console.log(req.user);
   const filteredBody = filterObj(
     req.body,
     "fullname",
