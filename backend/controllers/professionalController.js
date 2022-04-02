@@ -5,7 +5,6 @@ const multermiddlewares = require("../middlewares/multerMiddlewares");
 
 //Find All Professionals
 exports.getAllProfessionals = catchAsync(async (req, res) => {
-  console.log(req.user);
   const professionals = await Professional.find();
   res.status(200).json({
     message: "successful",
@@ -23,7 +22,6 @@ exports.getAProfessional = catchAsync(async (req, res) => {
   if (req.params.id && req.params.id === req.user.id) {
     same = true;
   }
-  console.log(id);
   const professional = await Professional.findById(id).populate({
     path: "appointments",
     select: "_consumerId date time consumersName -_professionalId",
